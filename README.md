@@ -18,15 +18,21 @@ It’s so simple that the three pieces will be able to fit on a medium size t-sh
 Our equivalent to JSX, we can send to the function a string with HTML valid syntax or a real node dom like *document.body* to analyze the entire page. On our regular html syntax we can add the attribute *ref*. In this attribute we can add a dot syntax variable name, when you do that node will be saved into the UI Object.
 
 **Params:**
+
 **Name:** Html
+
 **Type:** (html node/ string)
+
 **Description:** The html node that we will create from HTML syntax string or an already created node to be analyzed to extract references from.
 
 **Name:** UI
+
 **Type:** Object
+
 **Description:** Object where references to html nodes will be saved
 
 **Returns**
+
 **Type:** Html node/ fragment
 
 **For example**
@@ -46,8 +52,11 @@ So if we need to update the content of the DOM is as simple as:
 This is our equivalent to state in React, this function will add the setState function to object sent to it. It will also call **onState** with the changes done to the state before each frame (think of it as being called every x time to sync all the changes, just the way that React.js does it)
 
 **Params:**
+
 **Name:** object
+
 **Type:** (object)
+
 **Description:** Object which setState and onState will be added to.
 
 ## Ozine.setState(partialState)
@@ -55,8 +64,11 @@ This is our equivalent to state in React, this function will add the setState fu
 Very similar to React’s equivalent we will be sending a partialState. This is the part of the state we want to be overridden. The state will be merged when requestAnimationFrame is called. This will allow to merge multiple updates to the state at the same time, similar to the way React does.
 
 **Params:**
+
 **Name:** partialState
+
 **Type:** (object)
+
 **Description:** Object with the properties to update the state with.
 
 ## Ozine.onState(state_delta)
