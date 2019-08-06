@@ -63,17 +63,20 @@ Very similar to React’s equivalent we will be sending a partialState. This is 
 
 We will wait for the next time the browser will try to repaint by waiting via using requestAnimationFrame. After that we will call onState in case it has been defined in the object and if a change of state has been requested via setState. Here we will differ from React’s approach: we will send as a param all the changes that have been requested via setState. This will create a nice dynamic when we are updating the UI since we are not using a virtual dom.
 
+
 **Example**
-var app= {};
-Ozine.addState(app);
-// We print on the page the changes done to the state, in this case both will
-// be apply at the same time so the result will be
-// { a: 1, b: 2 };
-app.onState = function(state){
-  document.body.innerHTML=JSON.stringify(state)
-};
-app.setState({a:1});
-app.setState({b:2});
+
+    var app= {};
+    Ozine.addState(app);
+    // We print on the page the changes done to the state, in this case both will
+    // be apply at the same time so the result will be
+    // { a: 1, b: 2 };
+    app.onState = function(state){
+      document.body.innerHTML=JSON.stringify(state)
+    };
+    app.setState({a:1});
+    app.setState({b:2});
 
 **Example using setState and Ozine.DOM to build UI**
+
 [https://codepen.io/anon/pen/KOVdKZ?editors=0010](https://codepen.io/anon/pen/KOVdKZ?editors=0010)
