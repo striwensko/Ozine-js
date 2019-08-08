@@ -1,0 +1,483 @@
+body, html{
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.walmart{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.walmart .header{
+    background-color: #017ADB;
+    padding: 10px 86px 10px 50px;
+    position: relative;
+}
+.walmart .header img{
+    height: 36px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    cursor: pointer;
+}
+.walmart .header input{
+    line-height: 36px;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 3px 0 0 3px;
+}
+.walmart .header i{
+    width: 36px;
+    height: 36px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.walmart .header i svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 16px;
+}
+.walmart .header > i > b{
+    background-color: #fa3e3e;
+    border-radius: 3px;
+    color: #fff;
+    padding: 1px 5px 1px 4px;
+    font-style: normal;
+    position: absolute;
+    top: 7px;
+    left: 27px;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    display: inline-block;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 13px;
+    font-weight: normal;
+}
+.walmart .header > i > b:empty{
+    display: none;
+}
+.walmart .header > b{
+    width: 36px;
+    height: 36px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    border-radius: 0 3px 3px 0;
+    background-color: #FFB718;
+    color: #ffF;
+    cursor: pointer;
+}
+.walmart .header > b svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 16px;
+}
+.walmart > .content{
+    display: block;
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background-color: #f5f5f5;
+    -webkit-overflow-scrolling: touch;
+}
+.walmart .content b.loader{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+}
+.walmart .content b.loader svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+}
+.walmart .catalog > .list{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+.walmart .content .more-button{
+    background-color: #FFB718;
+    display: block;
+    width: 100px;
+    margin: 10px auto;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+.walmart .catalog-item{
+    width: 300px;
+    position: relative;
+    background-color: #fff;
+    height: 110px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    margin: 5px;
+    box-sizing: border-box;
+    padding-left: 110px;
+    padding-right: 10px;
+    /* float: left; */
+    /* display: inline-block; */
+}
+
+.walmart .catalog-item .title{
+    line-height: 17px;
+    font-size: 12px;
+    padding-top: 10px;
+    color: #212121;
+    font-weight: bold;
+    cursor: pointer;
+    max-height: 68px;
+    overflow: hidden;
+}
+.walmart .catalog-item .title:hover{
+    color: #017ADB;
+}
+.walmart .catalog-item .msrp{
+    color: #ccc;
+    font-size: 12px;
+    font-style: normal;
+    text-decoration: line-through;
+}
+.walmart .catalog-item .price{
+    color: #FF6600;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.walmart .catalog-item img{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.walmart .catalog-item b{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #017ADB;
+}
+.walmart .catalog-item b svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 24px;
+    width: 24px;
+}
+.walmart .shopping-cart{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.walmart .shopping-cart > h1{
+    background: #017ADB;
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 56px;
+    line-height: 56px;
+}
+.walmart .shopping-cart > h1 i{
+    background-color: #FA3E3E;
+    color: #fff;
+    font-size: 10px;
+    font-style: normal;
+    display: inline-block;
+    line-height: 16px;
+    padding: 0 5px;
+    border-radius: 2px;
+    transform: translateY(-5px);
+    margin-left: 5px;
+}
+.walmart .shopping-cart > h1 i:empty{
+    display: none;
+}
+.walmart .shopping-cart > h1 > b{
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    color: #fff;
+}
+.walmart .shopping-cart > h1 > b > svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 24px;
+    fill: #fff;
+}
+.walmart .shopping-cart > div.list{
+    background-color: #f5f5f5;
+    flex: 1;
+    overflow-y: auto;
+}
+.walmart .shopping-cart > div.list > div{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    flex-direction: row;
+}
+.walmart .shopping-cart > div.bottom{
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+.walmart .shopping-cart > div.bottom b{
+    display: block;
+    text-align: center;
+    background: #FFA924;
+    background-image: linear-gradient(#FFD455 0%, #FFA924 100%);
+    color: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.shopping-item + .shopping-item{
+    /* margin-top: 15px; */
+}
+.shopping-item{
+    width: 300px;
+    position: relative;
+    background-color: #fff;
+    height: 110px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    margin: 5px;
+    box-sizing: border-box;
+    padding-left: 110px;
+    padding-right: 10px;
+}
+.shopping-item > div{
+        line-height: 17px;
+    font-size: 12px;
+    padding-top: 10px;
+    color: #212121;
+    font-weight: bold;
+    cursor: pointer;
+    max-height: 68px;
+    overflow: hidden;
+}
+.shopping-item > div:hover{
+    color: #017ADB;
+}
+.shopping-item img{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.shopping-item > span{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #F8F9FA;
+    line-height: 36px;
+    padding: 0 36px;
+    border-radius: 36px;
+}
+.shopping-item i{
+    color: #FFC94A;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 32px;
+}
+.shopping-item > span b{
+    font-weight: normal;
+    font-size: 14px;
+}
+.shopping-item > span u{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    position: absolute;
+}
+.shopping-item > span u:first-child{
+    top: 0;
+    left: 0;
+}
+.shopping-item > span u:last-child{
+    top: 0;
+    right: 0;
+}
+.shopping-item > span u svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 12px;
+}
+.shopping-item > span u:hover{
+    color: #FFC94A;
+}
+
+.walmart .product{
+    padding: 20px;
+}
+.walmart .product b.loader{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+}
+.walmart .product b.loader svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+}
+.walmart .product .content{
+    margin: 0 auto;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    box-sizing: border-box;
+}
+.walmart .product h1{
+    color: #017ADB;
+    margin: 0;
+    padding: 10px;
+    font-size: 26px;
+}
+@media only screen and (min-width: 850px) {
+    .walmart .product .details{
+        display: flex;
+        flex-direction: row;
+    }
+    .walmart .product .details .left{
+        width: 480px
+    }
+    .walmart .product .details .right{
+        flex: 1;
+        padding-left: 20px;
+    }
+}
+.walmart .product img{
+    border-radius: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.walmart .product p{
+    color: #484848;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+}
+.walmart .product p ul{
+    margin: 0;
+   padding: 0;
+   padding-left: 30px;
+}
+.walmart .product .price{
+    color: #FF6600;
+    font-size: 20px;
+    font-style: normal;
+    margin-right: 10px;
+    line-height: 36px;
+    display: inline-block;
+}
+.walmart .product span.counter{
+    position: relative;
+    /* bottom: 10px; */
+    /* right: 10px; */
+    background-color: #FFB718;
+    line-height: 36px;
+    padding: 0 36px;
+    border-radius: 36px;
+    display: inline-block;
+    margin-top: 20px;
+    display: inline-block;
+}
+.walmart .product span.counter b{
+    font-weight: normal;
+    font-size: 14px;
+}
+.walmart .product span.counter u{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    position: absolute;
+}
+.walmart .product span.counter u:first-child{
+    top: 0;
+    left: 0;
+}
+.walmart .product span.counter u:last-child{
+    top: 0;
+    right: 0;
+}
+.walmart .product span.counter u svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 12px;
+}
+.walmart .product span.counter u:hover{
+    color: #ffff;
+}
+
+@media only screen and (max-width: 600px) {
+    .walmart .product h1{
+        font-size: 18px;
+    }
+    .walmart .product img{
+        margin: 20px 0;
+    }
+}

@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>Wallmart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="text/javascript" src="js/ozine.core.js"></script>
+    <script type="text/javascript" src="js/ozine.data.js"></script>
+    <script type="text/javascript" src="js/ozine.router.js"></script>
+    <script type="text/javascript" src="js/walmart.app.js"></script>
+    <link rel="stylesheet" href="css/shopping-list.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script type="text/javascript">
+      var HYDRATION_DATA = {
+        mode: 'product',
+        product:{"name":"Ozark Trail 10' x 10' Slant Leg Canopy","description":"&lt;br&gt;Ozark Trail 10' x 10' Instant Slant Leg Canopy, Blue:&lt;ul&gt;&lt;li&gt;Made of steel and polyester&lt;/li&gt;&lt;li&gt;Covers a 8'x8' area&lt;/li&gt;&lt;li&gt;Easy to set up and take down&lt;/li&gt;&lt;/ul&gt;","image":"https://i5.walmartimages.com/asr/b7a40826-2bdf-48c9-afaa-d3775adfb59e_1.4302eded469b1a79a1664f6b8998b446.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF","price":40.47,"itemId":588816203},
+
+      };
+
+
+      //https://cors-anywhere.herokuapp.com/https://developer.walmart.com/proxy/item-api-doc-app/rest/v3/feeds
+      window.onload = function(){
+        new Walmart(document.body, HYDRATION_DATA).holder;
+        //document.body.appendChild(new ShoppingList().holder);
+      }
+    </script>
+  </head>
+  <body>
+
+
+
+    <div ref="walmart" class="walmart">
+      <div ref="header*" class="header">
+        <img ref="logo" src="images/walmart.png"/>
+        <input ref="search" type="text">
+        <b ref="buttons.search">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+          </svg>
+        </b>
+        <i ref="buttons.shoppingCart">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-cart" class="svg-inline--fa fa-shopping-cart fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path fill="currentColor" d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path>
+          </svg>
+          <b ref="shopping.qty"></b>
+        </i>
+      </div>
+      <div class="content" ref="content">
+
+        <div ref="product*" class="product" style="">
+          <b ref="loader" class="loader" style="display: none;">
+            <svg width="28px" height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-dual-ring">
+              <circle cx="50" cy="50" ng-attr-r="{{config.radius}}" ng-attr-stroke-width="{{config.width}}" ng-attr-stroke="{{config.stroke}}" ng-attr-stroke-dasharray="{{config.dasharray}}" fill="none" stroke-linecap="round" r="27" stroke-width="7" stroke="#017ADB" stroke-dasharray="42.411500823462205 42.411500823462205" transform="rotate(273.329 50 50)">
+                <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </svg>
+          </b>
+          <div class="content" ref="content" style="">
+            <h1 ref="_title">Ozark Trail 10' x 10' Slant Leg Canopy</h1>
+            <div class="details">
+              <div class="left">
+                <img ref="image" src="https://i5.walmartimages.com/asr/b7a40826-2bdf-48c9-afaa-d3775adfb59e_1.4302eded469b1a79a1664f6b8998b446.jpeg?odnHeight=450&amp;odnWidth=450&amp;odnBg=FFFFFF">
+              </div>
+              <div class="right">
+                <p ref="description"><br>Ozark Trail 10' x 10' Instant Slant Leg Canopy, Blue:
+                <ul>
+                  <li>Made of steel and polyester</li>
+                  <li>Covers a 8'x8' area</li>
+                  <li>Easy to set up and take down</li>
+                </ul>
+                </p>
+                <i ref="price" class="price">$40.47</i>
+                <span class="counter">
+                  <u ref="buttons.minus">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg>
+                  </u>
+                  <b ref="qty">0</b>
+                  <u ref="buttons.plus">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg>
+                  </u>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
