@@ -49,12 +49,31 @@ Ozine.addState = function(el){
   el.state = el.state || {};
   var _state = {pending: [], onState: function(){
     var data  = {};
+    var dataExtend = {};
     while (_state.pending.length > 0) {
-      data = Object.extend(data, _state.pending.shift().data);
+      var shiftState = _state.pending.shift().data;
+      for (var property in shiftState) {
+        if (property.match(/\[\]$/)) {
+          property = property.replace(/\[\]$/, '');
+          data[property] = (data[property] ? data[property] : []);
+          data[property].push(shiftState[property + '[]']);
+          delete shiftState[property + '[]'];
+        }
+        if (property.match(/\*$/)) {
+          property = property.replace(/\*$/, '');
+          dataExtend[property] = (dataExtend[property] ? dataExtend[property] : {});
+          dataExtend[property] = Object.extend(dataExtend[property], shiftState[property + '*']);
+          delete shiftState[property + '*'];
+        }
+      }
+      data = Object.extend(data, shiftState);
     }
     el.state = Object.extend(Object.extend({}, el.state), data);
+    for (var property in dataExtend){
+      el.state[property] = Object.extend(el.state[property] || {}, dataExtend[property]);
+    }
     _state.requestUpdate = false;
-    el.onState && el.onState(data);
+    el.onState && el.onState(Object.extend(data, dataExtend));
   }}
   el.setState = function(data) {
     if (!_state.requestUpdate) {
@@ -82,7 +101,7 @@ Ozine.Data.getState = function (id) {
   return (this.stores[id]) ? this.stores[id].state : {};
 };
 Ozine.Data.setState = function (id, data, forceUpdate) {
-  var store = this.getStore(id);
+  var store = this.createSingleStore(id);
   if (forceUpdate) {
     store.state = Object.extend(store.state, data);
     store.onState(data);
